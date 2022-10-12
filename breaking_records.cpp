@@ -1,29 +1,24 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 int main(){
     int n;
-    int c=0;
     cin>>n;
-    int arr[n];
+    int scores[n];
     for(int i=0;i<n;i++){
-        cin>>arr[i];
+        cin>>scores[i];
     }
-    for(int i=0;i<n;i++){
-        if(arr[i]>=35){
-            for(int j=arr[i];j<(arr[i]+5);j++){
-                if(j%5==0){
-                    c =j;
-                }
-            }
-            if((c-arr[i])<3){
-                cout<<c<<endl;
-            }
-            else {
-            cout<<arr[i]<<endl;
-            }
+    int max=scores[0];
+    int min=scores[0];
+    int count1=0,count2=0;
+    for(int i =1;i<n;i++){
+        if (scores[i]>max){
+            max = scores[i];
+            count1++;
         }
-        else {
-        cout<<arr[i]<<endl;
+        
+        else if(scores[i]<min) {
+            min = scores[i];
+        count2++;
         }
-    }
+    }cout<<count1<<" "<<count2;
 }
